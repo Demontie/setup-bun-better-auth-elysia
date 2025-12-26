@@ -108,4 +108,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-Desenvolvido com ❤️ por [Demontie Ferreira](https://github.com/demontie)
+Desenvolvido por [Demontie Ferreira](https://github.com/demontie)
