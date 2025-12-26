@@ -3,13 +3,30 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/main.ts",
+    "better-auth:generate": "bunx --bun @better-auth/cli@latest generate --config src/infra/auth/better-auth/config/better-auth.config.ts --output src/infra/db/drizzle/schemas/auth-schema.ts --yes",
+    "db:generate": "bun --env-file .env --bun drizzle-kit generate",
+    "db:migrate": "bun --env-file .env --bun drizzle-kit migrate",
+    "db:push": "bun --env-file .env --bun drizzle-kit push",
+    "db:studio": "bun --env-file .env --bun drizzle-kit studio",
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix . --unsafe"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.4.0",
+    "@elysiajs/openapi": "^1.4.11",
+    "better-auth": "^1.4.6",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
+    "elysia": "latest",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@biomejs/biome": "2.3.8",
+    "@types/pg": "^8.16.0",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.31.8",
+    "tsx": "^4.21.0"
   },
   "module": "src/index.js"
 }

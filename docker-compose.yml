@@ -1,0 +1,16 @@
+services:
+  # app:
+  #   extends:
+  #     file: ./docker/application/docker-compose.yml
+  #     service: app
+  postgres-better:
+    extends:
+      file: ./docker/postgres/docker-compose.yml
+      service: postgres-better
+
+networks:
+  ms_new_boilerplate_network:
+
+volumes:
+  postgres_data:
+    driver: local
